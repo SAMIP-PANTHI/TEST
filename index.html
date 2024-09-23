@@ -20,59 +20,61 @@
         /* Styles for the game over box */
         .game-over-box {
             background-color: rgba(31, 41, 55, 0.85); /* Semi-transparent dark background */
-            border-radius: 8px; /* Rounded corners for the box */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-            padding: 15px; /* Padding inside the box */
+            border-radius: 12px; /* More rounded corners for the box */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7); /* Deeper shadow for depth */
+            padding: 30px; /* Increased padding */
             max-width: 90%; /* Maximum width to be responsive */
-            width: 300px; /* Fixed width for larger screens */
+            width: 400px; /* Wider for larger screens */
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center">
 
     <!-- Header with logo and buttons -->
-    <header class="absolute top-0 w-full bg-white py-2 shadow-md z-10">
-        <div class="flex justify-between items-center px-4">
+    <header class="absolute top-0 w-full bg-white py-3 shadow-md z-10"> <!-- Reduced padding from py-6 to py-3 -->
+        <div class="flex justify-between items-center px-6">
             <!-- Logo image -->
-            <img src="Group 30.png" alt="Logo" class="h-8"> <!-- Set logo height -->
+            <img src="Group 30.png" alt="Logo" class="h-12"> <!-- Increased logo height -->
 
             <!-- Navigation and icons -->
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center space-x-4">
                 <!-- Button to view panorama -->
-                <button class="bg-blue-900 text-white px-3 py-1 rounded-lg text-xs">View Panorama</button>
-                <div class="flex space-x-2">
+                <a href="https://loyola.sxc.edu.np/publication/panorama:-the-vistas/issue-8:-walking-with-the-excluded">
+                    <button class="bg-blue-900 text-white px-5 py-3 rounded-lg text-lg hover:bg-blue-800 transition duration-200">View Panorama</button>
+                </a>
+                <div class="flex space-x-4">
                     <!-- Icons for navigation -->
-                    <a href=""><img src="Infinity-removebg-preview 4.png" alt="Icon 1" class="h-6"></a>
-                    <a href=""><img src="Clip path group.png" alt="Icon 2" class="h-6"></a>
-                    <a href=""><img src="Group 32.png" alt="Icon 3" class="h-6"></a>
+                    <a href="https://github.com/SXC-ALCC"><img src="Infinity-removebg-preview 4.png" alt="Icon 1" class="h-10"></a>
+                    <a href="https://loyola.sxc.edu.np/publication/panorama:-the-vistas/issue-8:-walking-with-the-excluded"><img src="Clip path group.png" alt="Icon 2" class="h-10"></a>
+                    <a href=""><img src="Group 32.png" alt="Icon 3" class="h-10"></a>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Main Game Over Screen -->
-    <div class="game-over-box text-center">
+    <div class="game-over-box text-center mt-10 md:mt-0 mx-4">
         <!-- Timer display -->
-        <div class="text-lg md:text-xl font-bold mb-2">00:00</div>
+        <div class="text-3xl md:text-4xl font-bold mb-3">00:00</div>
         <!-- Game over message -->
-        <div class="text-xl md:text-4xl font-semibold mb-4">Game Over</div>
+        <div class="text-4xl md:text-6xl font-semibold mb-5">Game Over</div>
         <!-- Player name -->
-        <div class="text-sm md:text-lg mb-1">Samip Panthi</div>
+        <div class="text-lg md:text-xl mb-2">Samip Panthi</div>
         <!-- Email display -->
-        <div class="text-xs md:text-sm mb-2">023a121@sxc.edu.np</div>
+        <div class="text-md md:text-lg mb-3">023a121@sxc.edu.np</div>
         <!-- Best time display -->
-        <div class="text-sm md:text-lg font-bold mb-2">Best Time: 00:00</div>
+        <div class="text-lg md:text-xl font-bold mb-3">Best Time: 00:00</div>
 
         <!-- Hearts and Continue button -->
-        <div class="flex justify-center items-center space-x-1 mb-2">
+        <div class="flex justify-center items-center space-x-2 mb-3">
             <!-- Heart icons -->
-            <span class="text-red-500 text-lg md:text-xl">❤️</span>
-            <span class="text-red-500 text-lg md:text-xl">❤️</span>
-            <span class="text-gray-500 text-lg md:text-xl">❤️</span>
+            <span class="text-red-500 text-3xl md:text-4xl">❤️</span>
+            <span class="text-red-500 text-3xl md:text-4xl">❤️</span>
+            <span class="text-gray-500 text-3xl md:text-4xl">❤️</span>
         </div>
 
         <!-- Button to continue -->
-        <button class="bg-blue-600 text-white text-sm md:text-base px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200">Continue</button>
+        <button class="bg-blue-600 text-white text-lg md:text-xl px-6 py-4 rounded-lg hover:bg-blue-700 transition duration-200">Continue</button>
     </div>
 
 </body>
