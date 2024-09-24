@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="x-icon" href="icon.png">  <!--Logo in the title-->
+    <link rel="shortcut icon" type="x-icon" href="icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Over Screen</title>
+    <!-- Using Tailwind CSS for responsive and utility-first styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Importing Poppins font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Styles for the body */
         body {
             background-image: url('bg.png'); /* Set the background image */
             background-size: cover; /* Make the background cover the entire screen */
@@ -17,64 +18,130 @@
             color: white; /* Set default text color to white */
         }
 
-        /* Styles for the game over box */
+        /* Styling the main game-over box */
         .game-over-box {
-            background-color: rgba(31, 41, 55, 0.85); /* Semi-transparent dark background */
-            border-radius: 12px; /* More rounded corners for the box */
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7); /* Deeper shadow for depth */
-            padding: 30px; /* Increased padding */
-            max-width: 90%; /* Maximum width to be responsive */
-            width: 400px; /* Wider for larger screens */
+            background-color: #ffffff; /* White background */
+            border-radius: 25px; /* Rounded corners for the box */
+            padding: 50px; /* Padding to make the box spacious */
+            max-width: 100%; /* Maximum width for responsiveness */
+            width: 450px; /* Default width of the box */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7); /* Box shadow for depth */
+            text-align: center; /* Center-align the text */
+            color: black; /* Text color inside the box */
+        }
+
+        /* Adjusting the size of the logo in the header */
+        header img {
+            height: 70px;
+        }
+
+        /* White belt at the top with buttons and icons */
+        .white-belt {
+            background-color: white; /* White background */
+            padding: 15px; /* Padding around the content */
+            display: flex; /* Flexbox to align items horizontally */
+            justify-content: space-between; /* Even spacing between elements */
+            align-items: center; /* Align items vertically centered */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+        }
+
+        /* Styling for the icons with links */
+        .icon-link {
+            height: 50px; /* Icon size */
+            cursor: pointer; /* Change cursor to pointer */
+            transition: transform 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        .icon-link:hover {
+            transform: scale(1.1); /* Enlarge the icon on hover */
+        }
+
+        /* Styling for any clickable links */
+        .link {
+            color: #2563eb; /* Blue color for link */
+            text-decoration: none; /* Remove underline */
+            font-weight: bold; /* Bold text */
+            transition: color 0.3s ease; /* Smooth color transition */
+        }
+
+        .link:hover {
+            color: #1d4ed8; /* Darker blue on hover */
+        }
+
+        /* Styling the "Visit Panorama" button */
+        .visit-panorama-btn {
+            background-color: #2563eb; /* Blue background */
+            color: white; /* White text */
+            padding: 10px 20px; /* Padding for the button */
+            border-radius: 8px; /* Rounded corners */
+            font-size: 1.2rem; /* Font size */
+            text-decoration: none; /* Remove underline */
+            font-weight: bold; /* Bold font */
+            transition: background-color 0.3s ease; /* Smooth background-color transition */
+        }
+
+        .visit-panorama-btn:hover {
+            background-color: #0144fc; /* Darker blue on hover */
+        }
+
+        /* Responsive design: Adjusting sizes for smaller screens */
+        @media (max-width: 768px) {
+            .game-over-box {
+                width: 90%; /* Smaller width on mobile devices */
+            }
+
+            header img {
+                height: 50px; /* Smaller logo */
+            }
+
+            .icon-link {
+                height: 30px; /* Smaller icon size */
+            }
+
+            .visit-panorama-btn {
+                padding: 8px 16px; /* Smaller padding */
+                font-size: 0.875rem; /* Smaller font size */
+            }
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center">
+<body class="min-h-screen flex items-center justify-center">
 
-    <!-- Header with logo and buttons -->
-    <header class="absolute top-0 w-full bg-white py-3 shadow-md z-10"> <!-- Reduced padding from py-6 to py-3 -->
-        <div class="flex justify-between items-center px-6">
-            <!-- Logo image -->
-            <img src="Group 30.png" alt="Logo" class="h-12"> <!-- Increased logo height -->
+    <!-- White belt at the top with logo, visit button, and clickable images -->
+    <header class="absolute top-0 w-full white-belt">
+        <!-- Main logo on the left -->
+        <img src="Group 59.png" alt="Logo" class="h-16">
 
-            <!-- Navigation and icons -->
-            <div class="flex items-center space-x-4">
-                <!-- Button to view panorama -->
-                <a href="https://loyola.sxc.edu.np/publication/panorama:-the-vistas/issue-8:-walking-with-the-excluded">
-                    <button class="bg-blue-900 text-white px-5 py-3 rounded-lg text-lg hover:bg-blue-800 transition duration-200">View Panorama</button>
-                </a>
-                <div class="flex space-x-4">
-                    <!-- Icons for navigation -->
-                    <a href="https://github.com/SXC-ALCC"><img src="Infinity-removebg-preview 4.png" alt="Icon 1" class="h-10"></a>
-                    <a href="https://loyola.sxc.edu.np/publication/panorama:-the-vistas/issue-8:-walking-with-the-excluded"><img src="Clip path group.png" alt="Icon 2" class="h-10"></a>
-                    <a href=""><img src="Group 32.png" alt="Icon 3" class="h-10"></a>
-                </div>
-            </div>
+        <div class="flex space-x-4">
+            <!-- "Visit Panorama" button in the middle -->
+            <a href="https://loyola.sxc.edu.np/publication/panorama:-the-vistas/issue-8:-walking-with-the-excluded" class="visit-panorama-btn">Visit Panorama</a>
+
+            <!-- Icons with links on the right -->
+            <a href="https://github.com/SXC-ALCC"><img src="Infinity-removebg-preview 4.png" alt="Icon 1" class="icon-link"></a>
+            <a href="https://loyola.sxc.edu.np/publication/panorama:-the-vistas/issue-8:-walking-with-the-excluded"><img src="Clip path group.png" alt="Icon 2" class="icon-link"></a>
+            <a href="https://www.youtube.com/watch?v=r4Fqa3PdHjU"><img src="Group 32.png" alt="Icon 3" class="icon-link"></a>
         </div>
     </header>
 
     <!-- Main Game Over Screen -->
-    <div class="game-over-box text-center mt-10 md:mt-0 mx-4">
-        <!-- Timer display -->
-        <div class="text-3xl md:text-4xl font-bold mb-3">00:00</div>
-        <!-- Game over message -->
-        <div class="text-4xl md:text-6xl font-semibold mb-5">Game Over</div>
-        <!-- Player name -->
-        <div class="text-lg md:text-xl mb-2">Samip Panthi</div>
-        <!-- Email display -->
-        <div class="text-md md:text-lg mb-3">023a121@sxc.edu.np</div>
-        <!-- Best time display -->
-        <div class="text-lg md:text-xl font-bold mb-3">Best Time: 00:00</div>
+    <div class="game-over-box mt-20">
+        <!-- Timer section -->
+        <div class="text-3xl font-semibold">Timer : 00m 00s</div> <!-- Increased the Timer text size -->
+        <h1 class="text-6xl font-semibold mt-4">Game Over</h1> <!-- Game over title -->
+        <p class="text-5xl mt-4">Samip Panthi</p> <!-- User name -->
+        <p class="text-2xl mt-1">023a121@sxc.edu.np</p> <!-- User email -->
+        <p class="text-3xl mt-4">Best time: ........</p> <!-- Best time placeholder -->
+        <p class="text-3xl mt-1">Current time: .......</p> <!-- Current time placeholder -->
 
-        <!-- Hearts and Continue button -->
-        <div class="flex justify-center items-center space-x-2 mb-3">
-            <!-- Heart icons -->
-            <span class="text-red-500 text-3xl md:text-4xl">❤️</span>
-            <span class="text-red-500 text-3xl md:text-4xl">❤️</span>
-            <span class="text-gray-500 text-3xl md:text-4xl">❤️</span>
+        <!-- Hearts row -->
+        <div class="flex justify-center mt-4 space-x-2">
+            <span class="text-blue-500 text-6xl">💙</span>
+            <span class="text-blue-500 text-6xl">💙</span>
+            <span class="text-blue-500 text-6xl">💙</span>
         </div>
 
-        <!-- Button to continue -->
-        <button class="bg-blue-600 text-white text-lg md:text-xl px-6 py-4 rounded-lg hover:bg-blue-700 transition duration-200">Continue</button>
+        <!-- "How to play" link -->
+        <a href="https://www.youtube.com/watch?v=r4Fqa3PdHjU" class="link text-2xl mt-6 block">How to play</a>
     </div>
 
 </body>
